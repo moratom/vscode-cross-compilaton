@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  dev:
+    build: ../
+    env_file:
+    - .env
+    volumes:
+    - ../:/work
+    - /etc/passwd:/etc/passwd:ro
+    - /etc/shadow:/etc/shadow:ro
+    - ${HOME}:${HOME}:ro
+    command: bash
+    stdin_open: true
+    tty: true
+    environment:
+      HOME: /home/docker
+      TERM: xterm-256color
+    group_add:
+      - sudo
+    user: ${DOCKER_USER}
