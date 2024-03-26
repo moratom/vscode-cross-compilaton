@@ -1,0 +1,6 @@
+{
+    "cmake.configureArgs": [
+        "-D HUNTER_ROOT=${workspaceFolder}/build/.hunter"
+    ],
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+}
